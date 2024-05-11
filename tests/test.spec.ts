@@ -35,7 +35,6 @@ test("test", async ({ page }) => {
       "gi"
     )
   );
-
   /* Edit field 1 */
   await page.locator("li:last-child .field1").click();
   await page.locator("#field1").fill("Test 1");
@@ -70,12 +69,10 @@ test("test", async ({ page }) => {
       "gi"
     )
   );
-
   /* Delete element */
   await page.locator("li:last-child .deleteButton").click();
   elements = await page.$$("li");
   expect(elements.length).toEqual(elementCount);
-
   /* Check field1 */
   await page.getByRole("button", { name: "Clear" }).click();
   await page.locator("#field2").fill("Field 2");
@@ -85,7 +82,6 @@ test("test", async ({ page }) => {
   await page.locator("#saveButton").click();
   elements = await page.$$("li");
   expect(elements.length).toEqual(elementCount);
-
   /* Check field2 */
   await page.getByRole("button", { name: "Clear" }).click();
   await page.locator("#field1").fill("Field 1");
@@ -95,7 +91,6 @@ test("test", async ({ page }) => {
   await page.locator("#saveButton").click();
   elements = await page.$$("li");
   expect(elements.length).toEqual(elementCount);
-
   /* Check field3 */
   await page.getByRole("button", { name: "Clear" }).click();
   await page.locator("#field1").fill("Field 1");
@@ -105,7 +100,6 @@ test("test", async ({ page }) => {
   await page.locator("#saveButton").click();
   elements = await page.$$("li");
   expect(elements.length).toEqual(elementCount);
-
   /* Check field4 */
   await page.getByRole("button", { name: "Clear" }).click();
   await page.locator("#field1").fill("Field 1");
@@ -116,11 +110,11 @@ test("test", async ({ page }) => {
   await page.locator("#saveButton").click();
   elements = await page.$$("li");
   expect(elements.length).toEqual(elementCount);
-
   /* Check numbering */
   await page.locator("li:first-child .deleteButton").click();
   elements = await page.$$("li");
   expect(elements.length).toEqual(elementCount - 1);
+  // console.log(await page.locator("li:first-child .id").allTextContents())
   expect(page.locator("li:first-child .id")).toContainText("1");
 
   /* Delete all */
