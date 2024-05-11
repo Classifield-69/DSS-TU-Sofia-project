@@ -1,3 +1,8 @@
 .content-list {
   width: 60%;
 }
+
+.deleteButton{
+  background-color: red;
+  color: black;
+}

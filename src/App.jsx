@@ -10,32 +10,32 @@ function App() {
   const [selectedBookId, setSelectedBookId] = useState();
   const [books, setBooks] = useState([
     {
-      title: "Title 1",
-      author: "Author 1",
+      title: "Грешката",
+      author: "Ел Кенеди",
       isbn: "ISBN 1",
-      price: 100,
+      price: 17.90,
       publicationDate: new Date("2021-01-01"),
     },
     {
-      title: "Title 2",
-      author: "Author 2",
+      title: "Още 365 дни",
+      author: "Бланка Липинска",
       isbn: "ISBN 2",
-      price: 100,
+      price: 19,
       publicationDate: new Date("2022-01-02"),
     },
     {
-      title: "Title 3",
-      author: "Author 2",
-      isbn: "ISBN 2",
-      price: 100,
-      publicationDate: new Date("2021-01-01"),
+      title: "The Lord of the Rings",
+      author: "John Ronald Reuel Tolkien",
+      isbn: "ISBN 3",
+      price: 20,
+      publicationDate: new Date("1957-07-29"),
     },
     {
-      title: "Title 4",
-      author: "Author 2",
-      isbn: "ISBN 2",
-      price: 100,
-      publicationDate: new Date("2021-01-01"),
+      title: "The Hobbit",
+      author: "John Ronald Reuel Tolkien",
+      isbn: "ISBN 4",
+      price: 25,
+      publicationDate: new Date("1937-09-21"),
     },
   ]);
   const selectBook = (id) => {
@@ -65,7 +65,6 @@ function App() {
     <>
       <Navbar />
       <div className="contentWrapper">
-		{selectedBookId}
         <BookList
           books={books}
           handleRemove={handleRemove}

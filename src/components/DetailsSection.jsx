@@ -37,8 +37,6 @@ export const DetailsSection = ({ data, handleAdd, selectedBookId, setSelectedBoo
   return (
     <>
       <section className="content-details">
-        {selectedBookId}<br/>
-        {JSON.stringify(data)}
         <h3 className="title">Details Section</h3>
         <form
           onSubmit={(e) => {
